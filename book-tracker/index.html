@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>📚 Book Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-gradient-to-br from-[#f6f1e7] via-[#f1e6d8] to-[#efe4d6] text-[#1d2230]" style="font-family: 'Source Sans 3', sans-serif;">
+  <header class="relative px-6 pt-16 pb-10">
+    <div class="pointer-events-none absolute -top-24 -right-20 h-64 w-64 rounded-full bg-gradient-to-br from-[#b54d2e]/30 to-transparent"></div>
+    <div class="mx-auto max-w-5xl animate-[rise_0.6s_ease_both]">
+      <p class="text-xs uppercase tracking-[0.4em] text-[#566070]">Journal de lecture</p>
+      <h1 class="mt-2 text-4xl font-semibold sm:text-5xl" style="font-family: 'Playfair Display', serif;">Book Tracker</h1>
+      <p class="mt-3 max-w-xl text-base text-[#566070]">Suivez vos lectures, la pile a lire, et vos pages avalees, comme dans un magazine personnel.</p>
+      <div class="mt-5 flex flex-wrap gap-3 text-xs text-[#566070]">
+        <span class="rounded-full border border-[#dacdbd] bg-white/70 px-3 py-1">Edition 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl space-y-8 px-6 pb-16">
+    <section class="grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-[#dacdbd] bg-[#fffaf2] p-6 shadow-[0_20px_45px_rgba(22,26,35,0.12)] animate-[rise_0.6s_ease_both]" style="animation-delay: 120ms;">
+        <p class="text-xs uppercase tracking-[0.3em] text-[#566070]">Livres lus</p>
+        <p id="totalBooks" class="mt-2 text-3xl sm:text-4xl" style="font-family: 'Playfair Display', serif;">0</p>
+      </div>
+      <div class="rounded-2xl border border-[#dacdbd] bg-[#fffaf2] p-6 shadow-[0_20px_45px_rgba(22,26,35,0.12)] animate-[rise_0.6s_ease_both]" style="animation-delay: 200ms;">
+        <p class="text-xs uppercase tracking-[0.3em] text-[#566070]">Pages lues</p>
+        <p id="totalPages" class="mt-2 text-3xl sm:text-4xl" style="font-family: 'Playfair Display', serif;">0</p>
+      </div>
+    </section>
+
+    <section class="rounded-2xl border border-[#dacdbd] bg-[#fffaf2] p-6 shadow-[0_20px_45px_rgba(22,26,35,0.12)] animate-[rise_0.6s_ease_both]" style="animation-delay: 280ms;">
+      <div>
+        <h2 class="text-2xl font-semibold" style="font-family: 'Playfair Display', serif;">Ajouter un titre</h2>
+        <p class="mt-1 text-sm text-[#566070]">Archivez vos lectures et suivez votre progression en un coup d'oeil.</p>
+      </div>
+      <form id="bookForm" class="mt-6 grid gap-4 sm:grid-cols-2">
+        <input id="title" placeholder="Titre *" required class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30 sm:col-span-2" />
+        <input id="author" placeholder="Auteur *" required class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30" />
+        <input id="suggestedBy" placeholder="Suggere par" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30" />
+        <input id="numberOfPages" type="number" placeholder="Nombre de pages *" required min="1" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30" />
+        <input id="pagesRead" type="number" placeholder="Pages lues" value="0" min="0" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30" />
+        <input id="price" type="number" placeholder="Prix (EUR)" step="0.01" min="0" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30" />
+        <select id="status" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30">
+          <option>Read</option>
+          <option>Re-read</option>
+          <option>DNF</option>
+          <option>Currently reading</option>
+          <option>Returned Unread</option>
+          <option>Want to read</option>
+        </select>
+        <select id="format" class="w-full rounded-xl border border-[#dacdbd] bg-[#f6f1e7] px-4 py-3 text-sm text-[#1d2230] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30">
+          <option>Print</option>
+          <option>PDF</option>
+          <option>Ebook</option>
+          <option>AudioBook</option>
+        </select>
+        <button type="submit" class="rounded-full bg-[#1d2230] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-[0_12px_22px_rgba(29,34,48,0.22)] transition-transform hover:-translate-y-0.5 sm:col-span-2">Ajouter le livre</button>
+      </form>
+    </section>
+
+    <section class="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <h2 class="text-2xl font-semibold" style="font-family: 'Playfair Display', serif;">Collection vivante</h2>
+        <p class="mt-1 text-sm text-[#566070]">Vos livres, vos formats, votre progression.</p>
+      </div>
+      <div class="flex flex-wrap items-center gap-3">
+        <div class="flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-[#566070]">
+          <span class="h-2 w-2 rounded-full bg-[#b54d2e] shadow-[0_0_0_4px_rgba(181,77,46,0.15)]"></span>
+          Mise a jour en temps reel
+        </div>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Rechercher par titre ou auteur"
+          aria-label="Rechercher par titre ou auteur"
+          class="w-full rounded-full border border-[#dacdbd] bg-white/80 px-4 py-2 text-sm text-[#1d2230] placeholder:text-[#8b8794] focus:border-[#b54d2e] focus:outline-none focus:ring-2 focus:ring-[#b54d2e]/30 sm:w-64"
+        />
+      </div>
+    </section>
+
+    <div id="bookList" class="grid gap-5 sm:grid-cols-2"></div>
+  </main>
+
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
