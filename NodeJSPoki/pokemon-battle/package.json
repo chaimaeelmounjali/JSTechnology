@@ -1,0 +1,16 @@
+{
+  "name": "pokemon-battle-cli",
+  "version": "1.0.0",
+  "description": "Mini jeu Pokémon en ligne de commande - TP Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": ["pokemon", "nodejs", "cli"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.6"
+  }
+}
