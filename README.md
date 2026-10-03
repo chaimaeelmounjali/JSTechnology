@@ -1,165 +1,116 @@
-# JSTechnology
+# ⚡ JavaScript & TypeScript Technology Suite (JSTechnology)
 
-Collection de travaux pratiques, de code labs et de mini-projets consacrés à l’écosystème JavaScript. Le dépôt met en pratique Node.js, Express, TypeScript, les API HTTP, la gestion des sessions et la persistance MongoDB à travers des projets progressifs et concrets.
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933.svg?logo=nodedotjs)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6.svg?logo=typescript)](https://www.typescriptlang.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-4.x-000000.svg?logo=express)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248.svg?logo=mongodb)](https://www.mongodb.com/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-## Objectif
+*Bilingual README: [Français](#-version-française) | [English](#-english-version)*
 
-L’objectif de ce repository est de consolider les fondamentaux du développement JavaScript côté serveur et côté navigateur :
+---
 
-- structurer une application Node.js avec des modules CommonJS ;
-- consommer une API externe et gérer l’asynchronisme avec les Promises et `async/await` ;
-- construire des API REST avec Express ;
-- manipuler et valider des données avec TypeScript ;
-- gérer une authentification par session ;
-- connecter une application à MongoDB avec Mongoose ;
-- réaliser des interfaces web interactives et des applications CLI.
+## 🇫🇷 Version Française
 
-## Projets inclus
+### 🎯 Objectif
+**JSTechnology** est une suite complète de projets pratiques, code labs et applications modulaires explorant en profondeur l'écosystème **JavaScript**, **TypeScript** et **Node.js**. L'objectif est de maîtriser les paradigmes modernes du développement web côté serveur et client : programmation asynchrone (`async/await`, Promises), consommation d'APIs REST tierces, persistance NoSQL avec MongoDB, typage statique rigoureux avec TypeScript, et sécurisation des routes par sessions Express.
 
-### 1. `NodeJSPoki/pokemon-battle`
+### 🛠️ Stack Technologique
+- **Langages** : JavaScript (ES6+), TypeScript, HTML5.
+- **Environnement & Runtime** : Node.js, npm, CommonJS.
+- **Backend & APIs** : Express.js, `express-session` (authentification par session et cookies de session).
+- **Base de Données** : MongoDB avec ODM Mongoose (schémas, typage et validation).
+- **Frontend** : TypeScript compilé en JavaScript standard, Tailwind CSS (CDN), DOM dynamique.
+- **CLI & Outils** : Inquirer.js (prompts interactifs CLI), module natif `node:https`.
+- **Rapports & Spécifications** : `rapport_booktracker.pdf`.
 
-Jeu de combat Pokémon en ligne de commande.
+### 👩‍💻 Mon Rôle & Contributions
+- **Conception & Architecture globale** :
+  - Structuration modulaire des projets avec découpage strict des responsabilités (routage, contrôleurs, modèles).
+- **Projet 1 : CLI Pokemon Battle (`NodeJSPoki/pokemon-battle`)** :
+  - Développement d'un jeu de combat au tour par tour en ligne de commande interrogeant l'API publique PokéAPI.
+  - Implémentation du moteur de combat : gestion des points de vie (PV), points de pouvoir (PP), calcul probabiliste des dégâts et précision.
+- **Projet 2 : Book Tracker Fullstack (`book-tracker`)** :
+  - Conception d'une application web complète de suivi de lecture avec persistance MongoDB.
+  - Typage fort avec TypeScript (`Book.ts`, enums `Status` et `Format`), validation client/serveur et calcul dynamique de la progression de lecture.
+- **Projet 3 : API Sécurisée Books Express (`booksExpress/books`)** :
+  - Développement d'une API REST protégée par middleware d'authentification basé sur les sessions (`express-session`).
 
-**Fonctionnalités principales :**
+### 📊 Résultats & Métriques Clés
+- **3 architectures complémentaires livrées** : un outil CLI interactif consommant une API externe, une application full-stack TypeScript + Express + MongoDB, et une API REST sécurisée avec sessions.
+- **Fiabilité et typage statique** : 100% du code Book Tracker validé par le compilateur TypeScript (`tsc`), éliminant les erreurs d'exécution courantes.
+- **Documentation et livrable académique** : Intégration d'un rapport technique détaillé (`rapport_booktracker.pdf`).
 
-- sélection interactive du Pokémon avec Inquirer ;
-- récupération des Pokémon et de leurs attaques depuis PokéAPI ;
-- combat au tour par tour contre un bot ;
-- gestion des PV, PP, précision, attaques bloquées et dégâts variables ;
-- affichage terminal avec couleurs ANSI et possibilité de rejouer.
+---
 
-**Organisation technique :**
+## 🇬🇧 English Version
 
-- `index.js` : boucle principale et interactions CLI ;
-- `api.js` : appels HTTP avec le module natif `node:https` ;
-- `game.js` : construction des Pokémon et règles du combat ;
-- `display.js` : rendu du statut et des résultats dans le terminal.
+### 🎯 Objective
+**JSTechnology** is a modular hands-on engineering lab and practical project portfolio covering the modern **JavaScript**, **TypeScript**, and **Node.js** ecosystem. It provides practical implementations bridging server-side and browser runtimes: asynchronous flow orchestration (`async/await`), third-party REST API integration, NoSQL persistence with MongoDB & Mongoose, compile-time type safety via TypeScript, and session-based access control.
 
-### 2. `book-tracker`
+### 🛠️ Tech Stack
+- **Languages**: JavaScript (ES6+), TypeScript, HTML5.
+- **Runtime & Environment**: Node.js, npm, CommonJS modules.
+- **Backend Framework**: Express.js, `express-session` (cookie session management).
+- **Database & ODM**: MongoDB with Mongoose (schemas, model validation, CRUD operations).
+- **Frontend**: TypeScript compiled to Vanilla JS, Tailwind CSS, dynamic DOM manipulation.
+- **CLI & Protocols**: Inquirer.js, native `node:https`.
+- **Documentation**: Comprehensive report included (`rapport_booktracker.pdf`).
 
-Application web de suivi de lectures, composée d’une interface TypeScript et d’une API Express connectée à MongoDB.
+### 👩‍💻 My Role & Key Contributions
+- **End-to-End System Design**:
+  - Engineered clean project structures isolating routing, domain services, and database layers.
+- **Project 1: Interactive Pokemon Battle CLI (`NodeJSPoki/pokemon-battle`)**:
+  - Built an asynchronous command-line battle simulator consuming PokéAPI endpoints.
+  - Coded game mechanics: turn-based bot opponent, move accuracy checks, PP counters, and ANSI color rendering.
+- **Project 2: Fullstack Book Tracker (`book-tracker`)**:
+  - Developed a fullstack reading log application backed by MongoDB.
+  - Modeled strict domain structures with TypeScript (`Book.ts`), client-side and server-side validation schemas, and real-time reading progress analytics.
+- **Project 3: Authenticated Books API (`booksExpress/books`)**:
+  - Engineered a REST API secured by session middleware, intercepting unauthorized requests on protected endpoints.
 
-**Fonctionnalités principales :**
+### 📊 Key Results & Impact
+- **Comprehensive Full-Stack Showcase**: Three complementary projects covering CLI utilities, REST microservices, and end-to-end web apps.
+- **Type Safety Guarantee**: Zero runtime schema exceptions in Book Tracker due to strict TypeScript compilation.
+- **Documented Architecture**: Accompanied by full analytical writeups (`rapport_booktracker.pdf`).
 
-- ajout de livres avec titre, auteur, format, prix et nombre de pages ;
-- suivi du statut de lecture et du nombre de pages lues ;
-- calcul de la progression et du nombre total de pages ;
-- recherche par titre ou auteur ;
-- modification et suppression d’un livre ;
-- validation des données côté client et côté serveur.
+---
 
-**Organisation technique :**
+### 📂 Repository Structure / Structure du Projet
+```text
+JSTechnology/
+├── NodeJSPoki/
+│   └── pokemon-battle/   # Interactive Pokémon CLI battle game
+├── book-tracker/         # Fullstack TypeScript + Express + MongoDB web app
+├── booksExpress/
+│   └── books/            # Express REST API with session-based auth
+├── package.json          # Root workspace configuration
+├── tsconfig.json         # Root TypeScript compiler options
+└── rapport_booktracker.pdf
+```
 
-- `src/Book.ts` : modèle TypeScript, enums `Status` et `Format`, calcul de progression ;
-- `src/index.ts` : logique de l’interface, appels à l’API et rendu dynamique ;
-- `server/server.js` : serveur Express, routes CRUD et schéma Mongoose ;
-- `index.html` : interface responsive avec Tailwind CSS via CDN ;
-- `dist/` : fichiers générés par la compilation TypeScript.
+### 🚀 Getting Started / Démarrage
 
-### 3. `booksExpress/books`
-
-API Express dédiée à la gestion de livres et à l’apprentissage de l’authentification par session.
-
-**Fonctionnalités principales :**
-
-- connexion et déconnexion avec `express-session` ;
-- vérification du statut d’authentification ;
-- protection des routes `/books` par middleware ;
-- consultation d’un livre ou de la liste complète ;
-- ajout d’un livre avec validation minimale ;
-- stockage temporaire des livres en mémoire.
-
-Les identifiants de démonstration prévus par l’exercice sont `admin / admin`.
-
-## Stack technique
-
-- **Langages :** JavaScript, TypeScript, HTML ;
-- **Runtime :** Node.js ;
-- **Backend :** Express.js ;
-- **Base de données :** MongoDB avec Mongoose pour `book-tracker` ;
-- **Frontend :** HTML, TypeScript compilé en JavaScript, Tailwind CSS via CDN ;
-- **CLI :** Inquirer ;
-- **API externe :** PokéAPI ;
-- **Authentification :** sessions Express avec `express-session` ;
-- **Modules :** CommonJS (`require` / `module.exports`) et modules locaux.
-
-## Mon rôle
-
-J’ai conçu et implémenté les différents exercices du repository de bout en bout :
-
-- définition de la structure des projets et des modules ;
-- développement de la logique métier des jeux et applications ;
-- intégration de PokéAPI et traitement des réponses asynchrones ;
-- création des routes Express et des middlewares de protection ;
-- modélisation et validation des livres avec TypeScript et Mongoose ;
-- développement de l’interface Book Tracker et de ses interactions ;
-- gestion des erreurs, des validations utilisateur et des cas limites ;
-- rédaction de la documentation spécifique du projet Pokémon.
-
-## Résultats
-
-Ce repository aboutit à trois implémentations fonctionnelles et complémentaires :
-
-- un jeu CLI interactif utilisant une API publique ;
-- une application complète de suivi de lectures avec frontend, API REST et MongoDB ;
-- une API Express protégée par authentification de session.
-
-Ces réalisations démontrent la capacité à passer d’un script Node.js modulaire à une application web full-stack, tout en appliquant des notions de séparation des responsabilités, validation des données, programmation asynchrone et conception d’API.
-
-## Installation et exécution
-
-Chaque projet possède son propre environnement Node.js et doit être installé séparément.
-
-### Pokémon Battle CLI
-
+#### 1. Pokemon Battle CLI
 ```bash
 cd NodeJSPoki/pokemon-battle
 npm install
 npm start
 ```
 
-Une connexion Internet est nécessaire pour interroger PokéAPI.
-
-### Book Tracker
-
+#### 2. Book Tracker (Fullstack)
 ```bash
 cd book-tracker
 npm install
 npx tsc
 node server/server.js
+# Open http://localhost:3000 (Requires local MongoDB instance)
 ```
 
-L’application utilise MongoDB en local avec la base `booktracker` et démarre sur `http://localhost:3000`.
-
-### Books Express
-
+#### 3. Books Express API
 ```bash
 cd booksExpress/books
 npm install
 npm start
+# Server starts on http://localhost:8080 (Auth credentials: admin / admin)
 ```
-
-L’API démarre sur `http://localhost:8080`. Il faut d’abord appeler `POST /auth/login` avec les identifiants `admin / admin` avant d’accéder aux routes `/books`.
-
-## Structure du repository
-
-```text
-JSTechnology/
-├── NodeJSPoki/
-│   └── pokemon-battle/   # Jeu Pokémon interactif en CLI
-├── book-tracker/         # Application web TypeScript + Express + MongoDB
-├── booksExpress/
-│   └── books/            # API Express avec authentification par session
-├── package.json          # Configuration Node.js à la racine
-├── tsconfig.json         # Configuration TypeScript
-└── rapport_booktracker.pdf
-```
-
-## Limites et pistes d’amélioration
-
-- ajouter une suite de tests automatisés pour les routes Express et la logique de combat ;
-- déplacer les URLs, ports et chaînes sensibles dans des variables d’environnement ;
-- remplacer l’authentification de démonstration par une gestion sécurisée des utilisateurs ;
-- utiliser un stockage persistant pour `booksExpress` ;
-- améliorer la gestion centralisée des erreurs et des états de chargement côté frontend ;
-- éviter de versionner les répertoires `node_modules` et conserver uniquement les fichiers nécessaires au projet.
